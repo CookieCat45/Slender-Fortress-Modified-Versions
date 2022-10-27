@@ -4092,7 +4092,7 @@ void SlenderCastAnimEvent(int bossIndex, int event)
 		return;
 	}
 	char path[PLATFORM_MAX_PATH];
-	soundPaths.GetString(GetRandomInt(0, soundPaths.Length), path, sizeof(path));
+	soundPaths.GetString(GetRandomInt(0, soundPaths.Length-1), path, sizeof(path));
 
 	if (path[0] != '\0')
 	{
