@@ -642,6 +642,7 @@ GlobalForward g_OnDifficultyVoteFinishedFwd;
 GlobalForward g_OnIsBossCustomAttackPossibleFwd;
 GlobalForward g_OnBossGetCustomAttackActionFwd;
 GlobalForward g_OnProjectileTouchFwd;
+GlobalForward g_OnBossChangeTargetFwd;
 
 // Private forwards
 PrivateForward g_OnGamemodeStartPFwd;

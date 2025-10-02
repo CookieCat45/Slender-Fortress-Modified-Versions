@@ -857,6 +857,16 @@ forward Action SF2_OnBossGetCustomAttackAction(SF2_ChaserBossEntity chaser, cons
 forward void SF2_OnProjectileTouch(SF2_Projectile_Base projectile, CBaseEntity other);
 
 /**
+ * Called when a Chaser boss changes its target.
+ *
+ * @param chaser			Chaser entity
+ * @param newTarget			The new target
+ * @param oldTarget			The previous target
+ * @return					Return Plugin_Changed if the new target is changed.
+ */
+forward Action SF2_OnBossChangeTarget(SF2_ChaserBossEntity chaser, CBaseEntity &newTarget, CBaseEntity oldTarget);
+
+/**
  * Fires each time a boss starts an attack.
  *
  * @param chaser			Chaser entity

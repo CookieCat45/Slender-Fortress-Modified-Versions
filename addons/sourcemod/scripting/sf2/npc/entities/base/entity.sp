@@ -136,9 +136,24 @@ methodmap SF2_BaseBoss < CBaseCombatCharacter
 		{
 			return CBaseEntity(EntRefToEntIndex(this.GetPropEnt(Prop_Data, "m_Target")));
 		}
-
+		
 		public set(CBaseEntity entity)
 		{
+			if (entity.index != this.Target.index)
+			{
+				CBaseEntity target = entity;
+				Action action = Plugin_Continue;
+				Call_StartForward(g_OnBossChangeTargetFwd);
+				Call_PushCell(this);
+				Call_PushCellRef(target);
+				Call_PushCell(this.Target);
+				Call_Finish(action);
+				if (action == Plugin_Changed)
+				{
+					entity = target;
+				}
+			}
+			
 			this.SetPropEnt(Prop_Data, "m_Target", EnsureEntRef(entity.index));
 		}
 	}
